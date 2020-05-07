@@ -1,0 +1,8 @@
+ // validate 
+ 
+ function faqpost(Request $request)
+  {
+    $request->validate([
+      'faq_qus' => 'required|unique:faqs',
+      'faq_ans' => 'required',
+    ]);
