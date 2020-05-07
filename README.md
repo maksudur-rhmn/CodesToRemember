@@ -42,15 +42,14 @@ RewriteRule ^(.\*)$ public/$1 [L]
         }
 
 //restore
-  
- function restore_banner($banner_id)
+
+function restore_banner($banner_id)
       {
       User::onlyTrashed()->where('id',$user_id)->restore();
 return back();
 }
-  
-  
- //alert message
+
+//alert message
 
        @if (session('success'))
        <div class="alert alert-success">
@@ -116,7 +115,6 @@ return back();
     	]);
     	}
           }
-
 
 //Ajax
 
@@ -194,5 +192,5 @@ $ ssh-keygen -o
            'cart_amount' => $request->cart_amount[$key],
          ]);
        }
-       return back();
+       return redirect('/')
     }
