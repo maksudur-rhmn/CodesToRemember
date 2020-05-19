@@ -194,3 +194,16 @@ $ ssh-keygen -o
        }
        return redirect('/')
     }
+    
+    
+    // PayPal REST API use this code for live 
+    
+     $apiContext->setConfig(
+           array(
+                        'log.LogEnabled' => true,
+                        'log.FileName' => 'PayPal.log',
+                        'log.LogLevel' => 'DEBUG',
+                        'mode' => 'live'
+                      )
+                     );
+
