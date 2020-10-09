@@ -13,6 +13,25 @@ RewriteRule ^(.\*)$ public/$1 [L]
       AddHandler application/x-httpd-ea-php72 .php .php7 .phtml
     </IfModule>
     # php -- END cPanel-generated handler, do not edit
+    
+    
+    // OR
+    
+    <IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews
+    </IfModule>
+
+    RewriteEngine On
+
+    # Redirect Trailing Slashes...
+    RewriteRule ^(.*)/$ /public/$1 [L,R=301]
+
+    # Handle Front Controller...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^(.*)$ public/$1 [L]
+</IfModule>
 
 // Edit
 
